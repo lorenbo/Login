@@ -1,0 +1,158 @@
+/* 样式初始化 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  /* 背景图片 */
+  background-image: url(../images/bg.jpg);
+  /* 告诉背景图片铺满body */
+  background-size: cover;
+
+  display: flex;
+  /* 主轴居中 */
+  justify-content: center;
+  /* 交叉轴居中 */
+  align-items: center;
+
+  perspective: 500px;
+}
+
+.login {
+  width: 350px;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .5);
+}
+
+.login .wrapper {
+  margin: 100px 40px;
+  /* background-color: antiquewhite; */
+}
+
+.login .wrapper .title {
+  /* 去除h标签的加粗 */
+  font-weight: normal;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 50px;
+}
+
+.login .wrapper .item {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  margin-bottom: 30px;
+}
+
+.login .wrapper .item .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.login .wrapper .item .icon img {
+  width: 100%;
+}
+
+.login .wrapper .item .input {
+  /* 子绝父相 */
+  position: relative;
+  width: 100%;
+  height: 30px;
+  margin-left: 15px;
+}
+
+.login .wrapper .item .input input {
+  /* css3的盒子模型 */
+  box-sizing: border-box;
+  height: 30px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 0 10px;
+}
+
+/* 登录按钮 */
+.login .wrapper .btn {
+  /* 更改鼠标的样式 */
+  cursor: pointer;
+  height: 40px;
+  width: 90%;
+  margin: 50px auto 0;
+  background-color: #1e90ff;
+  color: #fff;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
+}
+
+/* 文本框获得焦点 */
+.login .wrapper .item .input input:focus {
+  border: 1px solid #1e90ff;
+}
+
+.login .wrapper .item .input input:focus+.tip {
+  top: -5px;
+  opacity: 1;
+}
+
+.login .wrapper .item .input .tip {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  opacity: 0;
+  color: #1e90ff;
+  background-color: #fff;
+  transition: all .3s;
+}
+
+
+/* 登录框的缩小动画 */
+
+.scale-animation {
+  animation: scale 1s ease forwards;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(.2);
+  }
+}
+
+/* 翻转动画 */
+.loading {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  animation: rotate 1.5s infinite;
+  display: none;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+
+  50% {
+    transform: rotateX(-180deg) rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateX(-180deg) rotateY(-180deg);
+  }
+}

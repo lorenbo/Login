@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <div class="login">
+    <div class="wrapper">
+      <h3 class="title">登录</h3>
+
+      <!-- 用户名 -->
+      <div class="item">
+        <div class="icon">
+          <img src="./images/name.png" alt="">
+        </div>
+        <div class="input">
+          <input type="text" placeholder="请输入您的用户名">
+          <div class="tip">用户名</div>
+        </div>
+      </div>
+      <!-- 密码 -->
+      <div class="item">
+        <div class="icon">
+          <img src="./images/password.png" alt="">
+        </div>
+        <div class="input">
+          <input type="password" placeholder="请输入您的密码">
+          <div class="tip">密码</div>
+        </div>
+      </div>
+
+      <!-- 按钮 -->
+      <div class="btn">
+        登录
+      </div>
+    </div>
+  </div>
+
+  <div class="loading"></div>
+
+
+  <!-- 书写js代码的位置 -->
+  <script>
+    // 获取登陆按钮，通过类样式名称获取登陆按钮
+    let btn = document.querySelector('.btn')
+
+    // 当点击按钮的时候执行一个函数
+    btn.onclick = function () {
+      // 获取登录框，让他执行scale动画
+
+      let login = document.querySelector('.login')
+      let loading = document.querySelector('.loading')
+
+      // 给登录框添加 scale-animation 类样式
+      login.classList.add('scale-animation')
+
+      // 当动画执行完毕之后，隐藏登录框，显示loading
+      // 注册一个事件，监听动画执行完毕
+      document.addEventListener('animationend', function () {
+        // 隐藏登录框
+        login.style.display = 'none'
+
+        // 显示loading
+        loading.style.display = 'block'
+      })
+    }
+  </script>
+</body>
+
+</html>
